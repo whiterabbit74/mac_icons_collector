@@ -19,7 +19,7 @@ class StatusBarCoordinator: NSObject, ObservableObject {
     private var spacerItem: NSStatusItem?
     
     /// Spacer controller for managing animations and state
-    private let spacerController: SpacerController
+    let spacerController: SpacerController
     
     /// Theme manager for handling appearance
     private let themeManager: ThemeManager
@@ -120,6 +120,9 @@ class StatusBarCoordinator: NSObject, ObservableObject {
         item.view = spacerView
         
         self.spacerItem = item
+        
+        // Connect the spacer item to the controller
+        spacerController.setSpacerItem(item)
     }
     
     private func setupObservers() {

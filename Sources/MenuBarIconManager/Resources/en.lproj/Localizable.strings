@@ -1,0 +1,27 @@
+/* English Localization */
+
+/* Onboarding */
+"Welcome to Menu Bar Icon Manager!" = "Welcome to Menu Bar Icon Manager!";
+"To organize your menu bar icons:\n\n1. Hold ⌘ (Command) and drag icons\n2. Position icons you want to hide to the RIGHT of our arrow\n3. Click our arrow to collapse/expand\n\nYou can configure settings by right-clicking our icon." = "To organize your menu bar icons:\n\n1. Hold ⌘ (Command) and drag icons\n2. Position icons you want to hide to the RIGHT of our arrow\n3. Click our arrow to collapse/expand\n\nYou can configure settings by right-clicking our icon.";
+"Got it!" = "Got it!";
+
+/* Actions */
+"Expand" = "Expand";
+"Collapse" = "Collapse";
+"Quit" = "Quit";
+
+/* States */
+"Collapsed" = "Collapsed";
+"Expanded" = "Expanded";
+
+/* Behaviors */
+"Toggle" = "Toggle";
+"Show Popover" = "Show Popover";
+
+/* Themes */
+"Light" = "Light";
+"Dark" = "Dark";
+"Auto" = "Auto";
+
+/* Tooltip */
+"Menu Bar Icon Manager - %@ (Click to %@)" = "Menu Bar Icon Manager - %@ (Click to %@)";

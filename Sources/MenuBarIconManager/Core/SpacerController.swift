@@ -28,6 +28,11 @@ class SpacerController: ObservableObject {
     
     // MARK: - Public Methods
     
+    /// Set the spacer item to control
+    func setSpacerItem(_ item: NSStatusItem) {
+        self.spacerItem = item
+    }
+    
     /// Toggle between collapsed and expanded states
     func toggle() {
         switch currentState {

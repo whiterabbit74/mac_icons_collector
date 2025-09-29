@@ -10,7 +10,6 @@ import Cocoa
 import ServiceManagement
 import OSLog
 
-@main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: - Properties
