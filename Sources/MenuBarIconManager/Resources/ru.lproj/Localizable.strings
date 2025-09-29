@@ -25,3 +25,21 @@
 
 /* Tooltip */
 "Menu Bar Icon Manager - %@ (Click to %@)" = "Менеджер Иконок Меню-Бара - %@ (Кликните для %@)";
+
+/* Menu Items */
+"Preferences..." = "Настройки...";
+
+/* Preferences */
+"Launch at login" = "Запускать при входе";
+"Click behavior" = "Поведение при клике";
+"Theme" = "Тема";
+"Use monochrome icon" = "Монохромная иконка";
+"Selected icon" = "Выбранная иконка";
+"Enable animations" = "Включить анимации";
+"Duration:" = "Длительность:";
+"Width:" = "Ширина:";
+"Timeout:" = "Таймаут:";
+"Toggle shortcut:" = "Горячая клавиша:";
+"None" = "Нет";
+"Clear" = "Очистить";
+"Calibrate" = "Калибровать";

@@ -72,8 +72,12 @@ class StatusBarCoordinator: NSObject, ObservableObject {
     func updateToggleIcon() {
         guard let button = toggleItem?.button else { return }
         
-        // Create simple arrow icon
-        let icon = createArrowIcon()
+        // Create icon using IconManager
+        let icon = IconManager.createIcon(
+            type: settings.selectedIcon,
+            state: spacerController.currentState,
+            isMonochrome: settings.isMonochrome
+        )
         button.image = icon
         button.imagePosition = .imageOnly
         
@@ -146,33 +150,7 @@ class StatusBarCoordinator: NSObject, ObservableObject {
                      stateName, actionName)
     }
     
-    private func createArrowIcon() -> NSImage {
-        let size = NSSize(width: 16, height: 16)
-        let image = NSImage(size: size)
-        
-        image.lockFocus()
-        
-        let color = NSColor.controlTextColor
-        color.setFill()
-        
-        let path = NSBezierPath()
-        let center = CGPoint(x: size.width / 2, y: size.height / 2)
-        
-        // Simple down arrow
-        path.move(to: CGPoint(x: center.x - 4, y: center.y + 2))
-        path.line(to: CGPoint(x: center.x, y: center.y - 2))
-        path.line(to: CGPoint(x: center.x + 4, y: center.y + 2))
-        
-        path.lineWidth = 2.0
-        path.lineCapStyle = .round
-        path.lineJoinStyle = .round
-        path.stroke()
-        
-        image.unlockFocus()
-        image.isTemplate = true
-        
-        return image
-    }
+
     
     private func showContextMenu() {
         let menu = NSMenu()
@@ -185,6 +163,15 @@ class StatusBarCoordinator: NSObject, ObservableObject {
         let toggleMenuItem = NSMenuItem(title: stateText, action: #selector(menuToggleClicked), keyEquivalent: "")
         toggleMenuItem.target = self
         menu.addItem(toggleMenuItem)
+        
+        menu.addItem(.separator())
+        
+        // Preferences
+        let preferencesMenuItem = NSMenuItem(title: NSLocalizedString("Preferences...", comment: "Preferences menu item"), 
+                                           action: #selector(menuPreferencesClicked), 
+                                           keyEquivalent: ",")
+        preferencesMenuItem.target = self
+        menu.addItem(preferencesMenuItem)
         
         menu.addItem(.separator())
         
@@ -205,6 +192,12 @@ class StatusBarCoordinator: NSObject, ObservableObject {
     
     @objc private func menuToggleClicked() {
         spacerController.toggle()
+    }
+    
+    @objc private func menuPreferencesClicked() {
+        if let appDelegate = NSApp.delegate as? AppDelegate {
+            appDelegate.showPreferences()
+        }
     }
     
     @objc private func menuQuitClicked() {
