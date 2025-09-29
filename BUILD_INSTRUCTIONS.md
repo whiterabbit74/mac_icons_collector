@@ -13,23 +13,43 @@ This project is structured as a Swift Package that can be built using the `swift
 
 ### Building the Application
 
+#### Option 1: Using the Build Script (Recommended)
+
 1. **Clone or download the repository:**
    ```bash
    git clone <repository-url>
    cd mac_icons_collector
    ```
 
-2. **Build the application using Swift Package Manager:**
+2. **Run the build script:**
+   ```bash
+   ./build_app.sh
+   ```
+
+   This will:
+   - Build the Swift package
+   - Create a proper `.app` bundle
+   - Copy all resources and localizations
+   - Code sign the app (if certificates are available)
+
+3. **Run the application:**
+   ```bash
+   open MenuBarIconManager.app
+   ```
+
+#### Option 2: Manual Swift Package Manager Build
+
+1. **Build the application using Swift Package Manager:**
    ```bash
    swift build --configuration release
    ```
 
-3. **The built executable will be located at:**
+2. **The built executable will be located at:**
    ```
    .build/release/MenuBarIconManager
    ```
 
-4. **Run the application:**
+3. **Run the application:**
    ```bash
    .build/release/MenuBarIconManager
    ```

@@ -1,14 +1,20 @@
 # macOS Menu Bar Icon Manager
 
-A powerful macOS utility for managing and organizing menu bar icons, built with Swift and AppKit.
+A comprehensive macOS utility for managing and organizing menu bar icons, built with Swift Package Manager and featuring a complete SwiftUI preferences interface.
 
-## Features
+## ✨ Features
 
-- **Menu Bar Integration**: Lives entirely in the menu bar as a status item
-- **Dynamic Icon Management**: Hide/show menu bar icons by controlling spacer width
-- **Smooth Animations**: Configurable animation duration and timing
-- **Simple Interface**: Click to toggle, right-click for menu
-- **Apple Silicon Optimized**: Native arm64 performance
+- **Dynamic Icon Management**: Toggle visibility of menu bar icons with smooth animations
+- **Smart Spacer System**: Uses an invisible spacer to control which icons are hidden
+- **Multiple Icon Styles**: Choose from arrow, chevron, triangle, or dots icons
+- **Theme Support**: Light, dark, and automatic theme following system preferences  
+- **SwiftUI Preferences**: Modern, comprehensive settings interface
+- **Auto-Collapse**: Optional timeout to automatically hide icons after expansion
+- **Global Shortcuts**: Customizable keyboard shortcuts for quick access
+- **Multi-Display Support**: Per-display configuration for multi-monitor setups
+- **Login Item Support**: Optional startup with system login (macOS 13+)
+- **Localization**: Full English and Russian language support
+- **Swift Package Manager**: Modern build system with `swift build` command support
 
 ## System Requirements
 

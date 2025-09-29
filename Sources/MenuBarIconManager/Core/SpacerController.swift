@@ -20,6 +20,11 @@ class SpacerController: ObservableObject {
     private let settings: AppSettings
     private var spacerItem: NSStatusItem?
     
+    /// Auto-collapse timer
+    private var autoCollapseTimer: Timer?
+    
+
+    
     // MARK: - Initialization
     
     init(settings: AppSettings) {
@@ -53,6 +58,7 @@ class SpacerController: ObservableObject {
     func expand() {
         currentState = .expanded
         animateWidth(to: 0)
+        startAutoCollapseTimer()
     }
     
     // MARK: - Private Methods
@@ -89,6 +95,23 @@ class SpacerController: ObservableObject {
     private func setWidth(_ width: CGFloat) {
         currentWidth = width
         spacerItem?.length = width
+    }
+    
+    private func startAutoCollapseTimer() {
+        // Cancel existing timer
+        autoCollapseTimer?.invalidate()
+        autoCollapseTimer = nil
+        
+        // Only start timer if timeout is enabled
+        guard settings.autoCollapseTimeout > 0 else { return }
+        
+        autoCollapseTimer = Timer.scheduledTimer(withTimeInterval: settings.autoCollapseTimeout, repeats: false) { [weak self] _ in
+            DispatchQueue.main.async {
+                if self?.currentState == .expanded {
+                    self?.collapse()
+                }
+            }
+        }
     }
 }
 

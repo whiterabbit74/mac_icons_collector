@@ -26,6 +26,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// Hotkey manager
     private var hotkeyManager: HotkeyManager!
     
+    /// Preferences window controller
+    private var preferencesWindowController: PreferencesWindowController?
+    
     /// Logger
     private let logger = Logger(subsystem: "com.menubar.iconmanager", category: "AppDelegate")
     
@@ -126,9 +129,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarCoordinator?.spacerController.toggle()
     }
     
-    private func showPreferences() {
+    func showPreferences() {
         logger.debug("Showing preferences")
-        print("Preferences window not yet implemented")
+        
+        if preferencesWindowController == nil {
+            preferencesWindowController = PreferencesWindowController(
+                settings: settings,
+                themeManager: themeManager
+            )
+        }
+        
+        preferencesWindowController?.showWindow(nil)
+        preferencesWindowController?.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     private func showOnboarding() {
