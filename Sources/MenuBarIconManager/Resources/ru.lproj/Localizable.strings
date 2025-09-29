@@ -1,0 +1,27 @@
+/* Russian Localization */
+
+/* Onboarding */
+"Welcome to Menu Bar Icon Manager!" = "Добро пожаловать в Менеджер Иконок Меню-Бара!";
+"To organize your menu bar icons:\n\n1. Hold ⌘ (Command) and drag icons\n2. Position icons you want to hide to the RIGHT of our arrow\n3. Click our arrow to collapse/expand\n\nYou can configure settings by right-clicking our icon." = "Для организации иконок меню-бара:\n\n1. Удерживайте ⌘ (Command) и перетаскивайте иконки\n2. Разместите иконки, которые хотите скрыть, СПРАВА от нашей стрелки\n3. Кликните на нашу стрелку для сворачивания/разворачивания\n\nВы можете настроить параметры, щелкнув правой кнопкой на нашу иконку.";
+"Got it!" = "Понятно!";
+
+/* Actions */
+"Expand" = "Развернуть";
+"Collapse" = "Свернуть";
+"Quit" = "Выйти";
+
+/* States */
+"Collapsed" = "Свернуто";
+"Expanded" = "Развернуто";
+
+/* Behaviors */
+"Toggle" = "Переключить";
+"Show Popover" = "Показать Поповер";
+
+/* Themes */
+"Light" = "Светлая";
+"Dark" = "Темная";
+"Auto" = "Авто";
+
+/* Tooltip */
+"Menu Bar Icon Manager - %@ (Click to %@)" = "Менеджер Иконок Меню-Бара - %@ (Кликните для %@)";
